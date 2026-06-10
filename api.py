@@ -5,7 +5,11 @@ from flask import Flask, jsonify, request
 from conjugate import retrieve_verb, retrieve_noun
 
 app = Flask(__name__)
-
+@app.route("/v1/", methods=["GET"])
+def main_info():
+    return jsonify({
+        "message": "Welcome to latinAPI; more info at https://github.com/mechanikate/latinapi."
+    })
 @app.route("/v1/searchSimilar/", methods=["GET"])
 @app.route("/v1/getWord/", methods=["GET"])
 @app.route("/v1/getSimilar/", methods=["GET"])
