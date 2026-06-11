@@ -53,7 +53,10 @@ def get_stem(word):
         return_dict["partOfSpeech"]=closest_entry["pos"]
     if "gender" in closest_entry:
         return_dict["gender"]=closest_entry["gender"]
-    return_dict["form"]=[closest_entry["conjugation"] if "conjugation" in closest_entry else closest_entry["declension"], closest_entry["conjugation_variant"] if "conjugation_variant" in closest_entry else closest_entry["declension_variant"]]
+    try:
+        return_dict["form"]=[closest_entry["conjugation"] if "conjugation" in closest_entry else closest_entry["declension"], closest_entry["conjugation_variant"] if "conjugation_variant" in closest_entry else closest_entry["declension_variant"]]
+    except KeyError:
+        return_dict["form"] = [0]*2
     return jsonify(return_dict)
 
 @app.route("/v1/stem/<form>/<word>", methods=["GET"])

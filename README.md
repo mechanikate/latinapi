@@ -8,7 +8,7 @@ latinAPI is a Flask-based API for conjugating verbs, declining nouns, and variou
 <h2>Features</h2>
 <ul>
   <li>
-    Conjugating:
+    Declining/conjugating:
     <ul>
       <li>
         Nouns:
@@ -54,6 +54,9 @@ latinAPI is a Flask-based API for conjugating verbs, declining nouns, and variou
         </ul>
       </li>
     </ul>
+  </li>
+  <li>
+    Defining all words listed in Lewis & Short
   </li>
 </ul>
 <h2>Sources and acknowledgements</h2>
